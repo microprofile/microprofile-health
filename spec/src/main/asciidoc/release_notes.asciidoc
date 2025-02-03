@@ -27,7 +27,7 @@ This section documents the changes introduced by individual releases.
 
 The following changes occurred in the 4.1 release, compared to 4.0.
 
-A full list of changes may be found on the link:https://github.com/eclipse/microprofile-health/milestone/8[Future]
+A full list of changes may be found on the link:https://github.com/microprofile/microprofile-health/milestone/10[`4.1 milestone`].
 
 ==== Incompatible Changes
 
@@ -47,7 +47,7 @@ signature will be refactored accordingly in the next MicroProfile Health major r
 
 ==== Functional Changes
 
-- None
+- Introduction of the link:../../../../api/src/main/java/org/eclipse/microprofile/health/HealthReporter.java[`HealthReporter`] interface.
 
 ==== Other Changes
 
