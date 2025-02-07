@@ -22,9 +22,9 @@ This specification provides the following API to define health check procedures.
 
 == Common API check
 
-The main API to provide health check procedures (readiness or liveness) on the application level is the `HealthCheck` interface:
+The main API to provide health check procedures (readiness, liveness, or startup) on the application level is the `HealthCheck` interface:
 
-```
+```java
 @FunctionalInterface
 public interface HealthCheck {
 
@@ -112,8 +112,6 @@ public class MyCheck implements HealthCheck {
 }
 ----
 
-
-
 == Constructing `HealthCheckResponse` 's
 
 Application level code is expected to use one of static methods on `HealthCheckResponse` to retrieve a `HealthCheckResponseBuilder` used to construct a response, i.e. :
@@ -194,4 +192,21 @@ class MyChecks {
     return () -> HealthCheckResponse.named("startup-cpu-usage").status(getCpuUsage() < 0.95).build();
   }
 }
+```
+
+== HealthReporter
+
+Implementations MUST provide a CDI bean implementation of the `HealthReporter` interface that can be injected in
+the provider application to query the health information of the current service instance:
+
+```java
+@ApplicationScoped
+public class MyApp {
+
+    @Inject
+    private HealthReporter healthReporter;
+
+    ...
+}
+
 ```

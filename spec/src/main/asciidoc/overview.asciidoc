@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2016-2021 Eclipse Microprofile Contributors:
+// Copyright (c) 2016-2025 Eclipse Microprofile Contributors:
 // See overview.adoc
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,3 +66,45 @@ The proposed solution breaks down into two parts:
 - Martin Stefanko
 - Kevin Sutter
 
+== Guidelines
+
+Note that the force of these words is modified by the requirement level of the document in which they are used.
+
+1. MUST   This word, or the terms "REQUIRED" or "SHALL", mean that the
+definition is an absolute requirement of the specification.
+
+2. MUST NOT   This phrase, or the phrase "SHALL NOT", mean that the
+definition is an absolute prohibition of the specification.
+
+3. SHOULD   This word, or the adjective "RECOMMENDED", mean that there
+may exist valid reasons in particular circumstances to ignore a
+particular item, but the full implications must be understood and
+carefully weighed before choosing a different course.
+
+4. SHOULD NOT   This phrase, or the phrase "NOT RECOMMENDED" mean that
+there may exist valid reasons in particular circumstances when the
+particular behavior is acceptable or even useful, but the full
+implications should be understood and the case carefully weighed
+before implementing any behavior described with this label.
+
+5. MAY – This word, or the adjective “OPTIONAL”, mean that an item is truly discretionary.
+
+== Terms used
+
+|===
+| Term       | Description
+| Producer
+| The service/application that is checked
+
+| Consumer
+| The probing end, usually a machine, that needs to verify the health information of a Producer
+
+| Health Check Procedure
+| The code executed to determine the liveliness of a Producer
+
+| Producer status
+| The overall status, determined by considering all health check procedure results
+
+| Health check procedure result
+| The result of single check
+|===

@@ -63,7 +63,7 @@ public class MultipleProceduresFailedTest extends TCKBase {
 
         // response size
         JsonArray checks = json.getJsonArray("checks");
-        Assert.assertEquals(checks.size(), 3, "Expected four check responses");
+        Assert.assertEquals(checks.size(), 3, "Expected three check responses");
 
         // verify that all 3 procedures are present
         for (JsonObject check : checks.getValuesAs(JsonObject.class)) {
