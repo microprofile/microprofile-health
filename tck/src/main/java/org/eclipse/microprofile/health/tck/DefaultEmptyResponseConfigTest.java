@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2021 Contributors to the Eclipse Foundation
+ * Copyright (c) 2020-2025 Contributors to the Eclipse Foundation
  *
  * See the NOTICES file(s) distributed with this work for additional
  * information regarding copyright ownership.
@@ -37,11 +37,11 @@ import jakarta.json.JsonObject;
 /**
  * @author Martin Stefanko
  */
-public class ConfigTest extends TCKBase {
+public class DefaultEmptyResponseConfigTest extends TCKBase {
 
     @Deployment
     public static Archive getDeployment() {
-        return createWarFileWithClasses(ConfigTest.class.getSimpleName())
+        return createWarFileWithClasses(DefaultEmptyResponseConfigTest.class.getSimpleName())
                 .addAsManifestResource(new StringAsset("mp.health.default.readiness.empty.response=UP"),
                         "microprofile-config.properties");
     }

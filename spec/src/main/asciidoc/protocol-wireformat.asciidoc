@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2016-2021 Eclipse Microprofile Contributors:
+// Copyright (c) 2016-2025 Eclipse Microprofile Contributors:
 // See overview.adoc
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -200,6 +200,19 @@ https://github.com/eclipse/microprofile-config[MicroProfile Config] configuratio
 `mp.health.disable-default-procedures` to `true`. This allows the application to process and
 display only the user-defined health check procedures.
 
+=== Disabling individual health checks
+
+If you need to disable any of the included health checks procedures, you can include the `mp.health.disabled.checks` https://github.com/eclipse/microprofile-config[MicroProfile Config] configuration property which expects an array of the fully
+qualified classnames of the `HealthCheck` implementations. For instance:
+
+```properties
+mp.health.disabled.checks=org.acme.MyHealthCheck,org.myorg.CustomHealthCheck2
+```
+
+This might be particularly useful if the same application deploys in different environments
+with different requirements. The configuration can disable health checks which are not
+or potentially even can cause problems dynamically, without the need to recompile the whole
+application to remove the health check implementation.
 
 == Security
 
